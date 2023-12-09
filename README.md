@@ -1,1 +1,1 @@
-# useful_configs
+# random_configs
