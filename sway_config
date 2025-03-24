@@ -24,9 +24,9 @@ set $menu wmenu-run
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 exec --no-startup-id ~/start_openrgb.sh
-exec --no-startup-id ~/swww_schedule.sh
-exec --no-startup-id ~/swww_daemon.sh
-
+#exec --no-startup-id ~/swww_schedule.sh && sleep 2
+#exec --no-startup-id ~/swww_daemon.sh
+#exec --no-startup-id env WAYLAND_DISPLAY=$WAYLAND_DISPLAY ~/start_swww.sh
 output DP-1 {
     pos 0 0
     resolution 1920x1080

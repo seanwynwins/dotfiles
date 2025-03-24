@@ -1,0 +1,11 @@
+[Unit]
+Description=Start swww scripts
+
+[Service]
+ExecStart=/home/seanwynng/start_swww.sh
+Environment=WAYLAND_DISPLAY=wayland-1
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+
