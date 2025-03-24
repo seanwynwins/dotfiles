@@ -23,8 +23,9 @@ set $menu wmenu-run
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
-exec --no-startup-id /usr/bin/sunpaper -d
 exec --no-startup-id ~/start_openrgb.sh
+exec --no-startup-id ~/swww_schedule.sh
+exec --no-startup-id ~/swww_daemon.sh
 
 output DP-1 {
     pos 0 0
@@ -253,3 +254,4 @@ bar {
      swaybar_command waybar
 }
 include /etc/sway/config.d/*
+
