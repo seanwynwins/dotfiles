@@ -190,4 +190,3 @@ bar {
 }
 
 exec --no-startup-id xinput set-prop "Logitech USB Optical Mouse" "libinput Natural Scrolling Enabled" 1
-
