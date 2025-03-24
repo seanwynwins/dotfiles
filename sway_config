@@ -53,6 +53,10 @@ output HDMI-A-1 {
 
 ### Input configuration
 #
+input "1133:49271:Logitech_USB_Optical_Mouse" {
+    natural_scroll true          # Enable natural scrolling
+}
+
 # Example configuration:
 #
 #   input "2:14:SynPS/2_Synaptics_TouchPad" {
