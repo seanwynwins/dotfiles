@@ -4,7 +4,9 @@ Description=Start swww scripts
 [Service]
 ExecStart=/home/seanwynng/start_swww.sh
 Environment=WAYLAND_DISPLAY=wayland-1
-Restart=on-failure
+Restart=always
+TimeoutStartSec=120
+RemainAfterExit=yes
 
 [Install]
 WantedBy=default.target
