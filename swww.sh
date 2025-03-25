@@ -1,4 +1,3 @@
-# not actually used
 #!/bin/sh
 
 # This allows you to control which image to init the daemon with according
