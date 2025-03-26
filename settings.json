@@ -48,5 +48,13 @@
          "before": ["j", "j"],
          "after": ["<esc>"]
      }
-    ]
+    ],
+   "vscode-neovim.compositeKeys": {
+        "jj": {
+            "command": "vscode-neovim.escape",
+        },
+    }, 
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    }
 }
