@@ -23,7 +23,9 @@ set $menu wmenu-run
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec --no-startup-id ~/start_openrgb.sh
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 #exec --no-startup-id ~/swww_schedule.sh && sleep 2
 #exec --no-startup-id ~/swww_daemon.sh
 #exec --no-startup-id env WAYLAND_DISPLAY=$WAYLAND_DISPLAY ~/start_swww.sh
@@ -215,6 +217,15 @@ bindsym $mod+r mode "resize"
 #
     # Special keys to adjust volume via PulseAudio
     # Volume Control
+    # Increase microphone volume (F5)
+    bindsym F6 exec --no-startup-id pactl set-source-volume @DEFAULT_SOURCE@ +5%
+
+    # Decrease microphone volume (F4)
+    bindsym F5 exec --no-startup-id pactl set-source-volume @DEFAULT_SOURCE@ -5%
+
+    # Mute/Unmute microphone (F6)
+    bindsym F4 exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
     bindsym F9 XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
     bindsym F10 exec pactl set-sink-mute @DEFAULT_SINK@ toggle   # Mute/Unmute
     bindsym F11 exec pactl set-sink-volume @DEFAULT_SINK@ -5%     # Volume Up
@@ -229,8 +240,10 @@ bindsym $mod+r mode "resize"
     #bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     #bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
-    bindsym F6 exec grim
+    # bindsym F6 exec grim
     #bindsym Print exec grim
+
+    bindsym Ctrl+Mod1+d exec /home/seanwynng/bin/toggle-theme switch
 
 #
 # Status Bar:
