@@ -117,5 +117,12 @@ alias gad='git add'
 alias gpr='git pull --rebase'
 alias gp='git push'
 alias gss='git status -s'
-alias ezshrc='vim ~/.zshrc'
+alias ezshrc='nvim ~/.zshrc'
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/swww/target/release/:$PATH"
 
+# for zoom screen share
+export XDG_CURRENT_DESKTOP=sway
+alias adj-volume='~/start_easyeffects.sh'
+alias securecopy='bash ~/secure_copy.sh'
+export XDG_CONFIG_DIR="$HOME/.config"
