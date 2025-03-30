@@ -56,5 +56,8 @@
     }, 
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
-    }
+    },
+    "workbench.preferredLightColorTheme": "Default Light+",
+    "workbench.preferredDarkColorTheme": "Default Dark+",
+    "window.autoDetectColorScheme": true
 }
