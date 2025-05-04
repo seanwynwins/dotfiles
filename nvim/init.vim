@@ -30,7 +30,6 @@ set incsearch " Show search results as you type
 set mouse=a " Enable mouse support
 set completeopt=menuone,noselect " Better completion experience
 set termguicolors " Enable true colors
-set clipboard=unnamedplus " Use system clipboard
 set showcmd " Show command in the bottom bar
 set cursorline " Highlight the current line
 set expandtab " Use spaces instead of tabs
