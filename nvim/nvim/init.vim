@@ -28,7 +28,7 @@ set noswapfile " Disable the swapfile
 set hlsearch " Highlight all results
 set ignorecase " Ignore case in search
 set incsearch " Show search results as you type
-set mouse=a " Enable mouse support
+set mouse=a " Enable mouse support, but cant copy in kitty
 set completeopt=menuone,noselect " Better completion experience
 set termguicolors " Enable true colors
 set showcmd " Show command in the bottom bar
@@ -73,8 +73,11 @@ EOF
 
 " Set up Catppuccin theme
 lua << EOF
+
+local theme = require("theme")
+
 require("catppuccin").setup({
-    flavour = "auto", -- latte, frappe, macchiato, mocha
+    flavour = theme.flavour, -- latte, frappe, macchiato, mocha
     background = {
         light = "latte",
         dark = "mocha",

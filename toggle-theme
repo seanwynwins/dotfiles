@@ -26,11 +26,19 @@ function kitty_apply() {
 }
 
 function kitty_dark() {
-	ln --symbolic --force "$XDG_CONFIG_DIR/kitty/Cobalt_Neon.conf" "$XDG_CONFIG_DIR/kitty/colors.conf"
+	ln --symbolic --force "$XDG_CONFIG_DIR/kitty/sakura.conf" "$XDG_CONFIG_DIR/kitty/colors.conf"
 }
 
 function kitty_light() {
-	ln --symbolic --force "$XDG_CONFIG_DIR/kitty/3024_Day.conf" "$XDG_CONFIG_DIR/kitty/colors.conf"
+	ln --symbolic --force "$XDG_CONFIG_DIR/kitty/tokyonight_day.conf" "$XDG_CONFIG_DIR/kitty/colors.conf"
+}
+
+function nvim_dark() {
+    echo 'return { flavour = "mocha" }' > "$XDG_CONFIG_DIR/nvim/theme.lua"
+}
+
+function nvim_light() {
+    echo 'return { flavour = "latte" }' > "$XDG_CONFIG_DIR/nvim/theme.lua"
 }
 
 function mako_apply() {
