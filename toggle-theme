@@ -26,11 +26,11 @@ function kitty_apply() {
 }
 
 function kitty_dark() {
-	ln --symbolic --force "$XDG_CONFIG_DIR/kitty/GruvBox_DarkHard.conf" "$XDG_CONFIG_DIR/kitty/colors.conf"
+	ln --symbolic --force "$XDG_CONFIG_DIR/kitty/mocha.conf" "$XDG_CONFIG_DIR/kitty/colors.conf"
 }
 
 function kitty_light() {
-	ln --symbolic --force "$XDG_CONFIG_DIR/kitty/Tango_Light.conf" "$XDG_CONFIG_DIR/kitty/colors.conf"
+	ln --symbolic --force "$XDG_CONFIG_DIR/kitty/frappe.conf" "$XDG_CONFIG_DIR/kitty/colors.conf"
 }
 
 function mako_apply() {

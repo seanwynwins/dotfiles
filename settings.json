@@ -57,7 +57,7 @@
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
-    "workbench.preferredLightColorTheme": "Solarized Light",
-    "workbench.preferredDarkColorTheme": "Tomorrow Night Blue",
+    "workbench.preferredLightColorTheme": "Catppuccin Latte",
+    "workbench.preferredDarkColorTheme": "Catppuccin Frappé",
     "window.autoDetectColorScheme": true
 }
