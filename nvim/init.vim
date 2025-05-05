@@ -1,3 +1,7 @@
+lua << EOF
+package.path = package.path .. ';' .. vim.fn.stdpath('config') .. '/?.lua'
+EOF
+
 " Load Packer
 lua << EOF
 require('packer').startup(function(use)
