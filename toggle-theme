@@ -1,7 +1,15 @@
 #!/bin/bash
 
 XDG_CONFIG_DIR="$HOME/.config/"
+LOG_FILE="/tmp/toggle-theme.log"
 
+
+# Function to log messages
+log() {
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> "$LOG_FILE"
+}
+
+log "starting script"
 function gtk_dark() {
 	gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 	gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
@@ -22,19 +30,22 @@ function kitty_dark() {
 }
 
 function kitty_light() {
-	ln --symbolic --force "$XDG_CONFIG_DIR/kitty/3024_Day.conf" "$XDG_CONFIG_DIR/kitty/colors.conf"
+	ln --symbolic --force "$XDG_CONFIG_DIR/kitty/Tango_Light.conf" "$XDG_CONFIG_DIR/kitty/colors.conf"
 }
 
 function mako_apply() {
 	makoctl reload
+    log "mako reload"
 }
 
 function mako_dark() { 
-	cat "$XDG_CONFIG_DIR/mako/config-base" "$XDG_CONFIG_DIR/mako/config-catpuccin-mocha" > "$XDG_CONFIG_DIR/mako/config"
+	cat "$XDG_CONFIG_DIR/mako/config-base" "$XDG_CONFIG_DIR/mako/themes/catppuccin-mocha/catppuccin-mocha-flamingo" > "$XDG_CONFIG_DIR/mako/config"
+    log "mako dark"
 }
 
 function mako_light() {
-	cat "$XDG_CONFIG_DIR/mako/config-base" "$XDG_CONFIG_DIR/mako/config-catpuccin-latte" > "$XDG_CONFIG_DIR/mako/config"
+	cat "$XDG_CONFIG_DIR/mako/config-base" "$XDG_CONFIG_DIR/mako/themes/catppuccin-latte/catppuccin-latte-flamingo" > "$XDG_CONFIG_DIR/mako/config"
+    log "mako light"
 }
 
 function sway_apply() {
@@ -123,4 +134,3 @@ setup
 process_args "$@"
 main
 set_theme
-
