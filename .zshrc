@@ -1,3 +1,13 @@
+# Run neofetch only once per session (first terminal window)
+if [[ -z "$TMUX" && -z "$SSH_CONNECTION" && -t 1 && ! -f ~/.neofetch_run ]]; then
+  neofetch
+   #Mark that neofetch has been run in this session
+  touch ~/.neofetch_run
+fi
+
+# Cleanup neofetch run flag on terminal close
+trap 'rm -f ~/.neofetch_run' EXIT
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -117,12 +127,19 @@ alias gad='git add'
 alias gpr='git pull --rebase'
 alias gp='git push'
 alias gss='git status -s'
-alias ezshrc='nvim ~/.zshrc'
-export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/swww/target/release/:$PATH"
+alias ezshrc='vim ~/.zshrc'
+alias signal='signal-cli -a +14802528210'
 
-# for zoom screen share
-export XDG_CURRENT_DESKTOP=sway
-alias adj-volume='~/start_easyeffects.sh'
+export PATH=$HOME/signal-cli/build/install/signal-cli/bin:$PATH
+
+export PATH="/usr/local/bin:$PATH"
+export PATH="/Users/seanwynng/dnspeep/target/release:$PATH"
+export PATH="/usr/local/bin/git:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export REMOTE_USER="seanwyn"
+export REMOTE_IP="192.168.0.178"
 alias securecopy='bash ~/secure_copy.sh'
-export XDG_CONFIG_DIR="$HOME/.config"
+eval "$(gh copilot alias -- zsh)"
