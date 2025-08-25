@@ -1,7 +1,3 @@
-lua << EOF
-package.path = package.path .. ';' .. vim.fn.stdpath('config') .. '/?.lua'
-EOF
-
 " Load Packer
 lua << EOF
 require('packer').startup(function(use)
@@ -13,7 +9,10 @@ require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig' -- LSP configurations
     use 'nvim-telescope/telescope.nvim' -- Fuzzy finder
     use 'mfussenegger/nvim-jdtls' -- Java Development Tools Language Server
-    use 'github/copilot.vim' -- GitHub Copilot
+    use { 'github/copilot.vim',
+          cond = function()
+              return vim.env.TERM_PROGRAM ~= 'vscode'
+          end }
     use { "catppuccin/nvim", as = "catppuccin" } -- Catppuccin theme
 
     -- Optional: Add dependencies for Telescope
@@ -32,7 +31,7 @@ set noswapfile " Disable the swapfile
 set hlsearch " Highlight all results
 set ignorecase " Ignore case in search
 set incsearch " Show search results as you type
-set mouse=a " Enable mouse support, but cant copy in kitty
+set mouse=a " Enable mouse support
 set completeopt=menuone,noselect " Better completion experience
 set termguicolors " Enable true colors
 set showcmd " Show command in the bottom bar
@@ -77,11 +76,8 @@ EOF
 
 " Set up Catppuccin theme
 lua << EOF
-
-local theme = require("theme")
-
 require("catppuccin").setup({
-    flavour = theme.flavour, -- latte, frappe, macchiato, mocha
+    flavour = "auto", -- latte, frappe, macchiato, mocha
     background = {
         light = "latte",
         dark = "mocha",
