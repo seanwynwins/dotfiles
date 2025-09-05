@@ -29,7 +29,7 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 #exec --no-startup-id ~/swww_schedule.sh && sleep 2
 #exec --no-startup-id ~/swww_daemon.sh
 #exec --no-startup-id env WAYLAND_DISPLAY=$WAYLAND_DISPLAY ~/start_swww.sh
-output DP-1 {
+output DP-3 {
     pos 0 0
     resolution 1920x1080
 }
@@ -244,6 +244,7 @@ bindsym $mod+r mode "resize"
     #bindsym Print exec grim
 
     bindsym Ctrl+Mod1+d exec /home/seanwynng/bin/toggle-theme switch
+    bindsym $mod+period exec makoctl dismiss -a
 
 #
 # Status Bar:
