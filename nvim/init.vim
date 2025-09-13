@@ -135,3 +135,5 @@ nnoremap <leader>fg <cmd>Telescope live_grep<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 
+nnoremap <leader>cd :Copilot disable<CR>
+nnoremap <leader>ce :Copilot enable<CR>
