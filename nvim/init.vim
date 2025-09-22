@@ -21,7 +21,6 @@ end)
 EOF
 
 " Key mappings
-inoremap jj <ESC>
 let mapleader = "'"
 
 " General settings
